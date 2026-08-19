@@ -41,7 +41,7 @@ class ExerciciosController extends Controller
     }
 
 
-    
+
 
     public function abrirFormExer4(){
         return view('exer4');
@@ -56,6 +56,23 @@ class ExerciciosController extends Controller
             $erro = "Não é possível dividir por zero.";
             return view('exer4', ['erro' => $erro]);
         }
+        
+    }
+
+
+
+    public function abrirFormExer5(){
+        return view('exer5');
+    }
+    public function respostaExer5(Request $request){
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+        $valor3 = $request->valor3;
+        $soma = $valor1 + $valor2 + $valor3;
+        $media = $soma / 3;
+        return view('exer5', ['media' => $media]);
+
+        
         
     }
 
