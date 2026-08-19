@@ -9,7 +9,6 @@ class ExerciciosController extends Controller
     public function abrirFormExer1(){
         return view('exer1');
     }
-
     public function respostaExer1(Request $request){
         $valor1 = $request->valor1;
         $valor2 = $request->valor2;
@@ -18,15 +17,27 @@ class ExerciciosController extends Controller
     }
 
 
+
     public function abrirFormExer2(){
         return view('exer2');
     }
-
     public function respostaExer2(Request $request){
         $valor1 = $request->valor1;
         $valor2 = $request->valor2;
         $diferenca = $valor1 - $valor2;
         return view('exer2', ['diferenca' => $diferenca]);
+    }
+
+
+
+    public function abrirFormExer3(){
+        return view('exer3');
+    }
+    public function respostaExer3(Request $request){
+        $valor1 = $request->valor1;
+        $valor2 = $request->valor2;
+        $produto = $valor1 * $valor2;
+        return view('exer3', ['produto' => $produto]);
     }
 
 }
