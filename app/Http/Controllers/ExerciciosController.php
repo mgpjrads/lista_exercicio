@@ -71,9 +71,16 @@ class ExerciciosController extends Controller
         $soma = $valor1 + $valor2 + $valor3;
         $media = $soma / 3;
         return view('exer5', ['media' => $media]);
+    }
 
-        
-        
+
+    public function abrirFormExer6(){
+        return view('exer6');
+    }
+    public function respostaExer6(Request $request){
+        $valor1 = $request->valor1;
+        $fahrenheit = ($valor1 * (9/5)) + 32;
+        return view('exer6', ['fahrenheit' => $fahrenheit]);
     }
 
 }
