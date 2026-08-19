@@ -224,4 +224,20 @@ class ExerciciosController extends Controller
         $segundos = $valor1 * 86400;
         return view('exer19', ['horas' => $horas, 'minutos' => $minutos, 'segundos' => $segundos]);
     }
+
+
+    public function abrirFormExer20(){
+        return view('exer20');
+    }
+    public function respostaExer20(Request $request){
+        $distancia = $request->valor1;
+        $tempo = $request->valor2;
+        if ($tempo != 0){
+            $velocidade = $distancia / $tempo;
+            return view('exer20', ['velocidade' => $velocidade]);
+        } else {
+            $erro = "O tempo não pode ser igual a zero.";
+            return view('exer20', ['erro' => $erro]);
+        }
+    }
 }
