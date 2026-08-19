@@ -103,4 +103,14 @@ class ExerciciosController extends Controller
         $area = $base * $altura;
         return view('exer8', ['area' => $area]);
     }
+
+
+    public function abrirFormExer9(){
+        return view('exer9');
+    }
+    public function respostaExer9(Request $request){
+        $raio = $request->valor1;
+        $area = ($raio ** 2) * 3.14;
+        return view('exer9', ['area' => $area]);
+    }
 }
