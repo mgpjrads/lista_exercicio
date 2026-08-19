@@ -145,4 +145,14 @@ class ExerciciosController extends Controller
         $potencia = $valor1 ** $valor2;
         return view('exer12', ['potencia' => $potencia]);
     }
+
+
+    public function abrirFormExer13(){
+        return view('exer13');
+    }
+    public function respostaExer13(Request $request){
+        $valor1 = $request->valor1;
+        $metros = $valor1 * 100;
+        return view('exer13', ['metros' => $metros]);
+    }
 }
