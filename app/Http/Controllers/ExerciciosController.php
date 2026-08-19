@@ -83,4 +83,14 @@ class ExerciciosController extends Controller
         return view('exer6', ['fahrenheit' => $fahrenheit]);
     }
 
+
+    public function abrirFormExer7(){
+        return view('exer7');
+    }
+    public function respostaExer7(Request $request){
+        $valor1 = $request->valor1;
+        $celsius = ($valor1 - 32) * (5/9);
+        return view('exer7', ['celsius' => $celsius]);
+    }
+
 }
